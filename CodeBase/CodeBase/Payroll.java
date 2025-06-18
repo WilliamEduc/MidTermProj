@@ -106,6 +106,9 @@ public class Payroll {
         this.netPay = netPay;
     }
 
+
+    //getters
+
     public String getEmployeeId() {
         return employeeId;
     }
@@ -165,8 +168,6 @@ public class Payroll {
     public double getNetPay() {
         return netPay;
     }
-
-
 
 
 
