@@ -196,5 +196,18 @@ public class Payroll {
         }
     }
 
+    public void printPayslip() {
+        System.out.println("\nABC Solutions - Employee Payslip (2025)");
+        System.out.println("=================================");
+        System.out.println("Employee ID: " + this.getEmployeeId());
+        System.out.println("Name: " + this.getEmployeeName());
+        System.out.println("Department: " + this.getDepartment());
+        System.out.println("\nEARNINGS");
+        System.out.printf("Basic Salary: PHP %.2f\n", this.getBasicSalary());
+        System.out.println("Overtime Pay: (calculation not yet implemented)");
+        System.out.println("=================================");
+    }
+
+
 }
 
