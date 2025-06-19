@@ -1,5 +1,7 @@
 package CodeBase;
 
+import java.util.Scanner;
+
 public class Payroll {
     private String employeeId;
     private String employeeName;
@@ -42,9 +44,6 @@ public class Payroll {
 
 
     //setters and getters
-
-
-
 
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
@@ -171,4 +170,31 @@ public class Payroll {
 
 
 
+    public void  InputEmployeeDetails() {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.println("Welcome to ABC Payroll System");
+
+            System.out.print("Enter Employee ID (Format: EMP-XXXX): ");
+            this.setEmployeeId(scanner.nextLine());
+
+            System.out.print("Enter Full Name: ");
+            this.setEmployeeName(scanner.nextLine());
+
+            System.out.print("Enter Department: ");
+            this.setDepartment(scanner.nextLine());
+
+            System.out.print("Enter Basic Monthly Salary PHPsymbol: ");
+            this.setBasicSalary(Double.parseDouble(scanner.nextLine()));
+
+            System.out.print("Enter Overtime Hours Worked: ");
+            this.setOvertimeHours(Double.parseDouble(scanner.nextLine()));
+
+        } catch (Exception e) {
+            System.out.println("An error occurred: Invalid input.");
+        }
+    }
+
 }
+
