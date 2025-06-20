@@ -165,7 +165,7 @@
 //
 //    public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
-//        MidProject calculator = new MidProject();
+//        StatutoryDeductions calculator = new StatutoryDeductions();
 //
 //
 //        System.out.println("=== Philippine Statutory Deductions Calculator ===");
