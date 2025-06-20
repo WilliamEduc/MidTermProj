@@ -1,6 +1,6 @@
 package CodeBase;
 
-public class SalaryCalculations {
+public class SalaryCalculations extends CodeBase.Payroll {
     private String name;
     private double monthlySalary;
     private double hoursWorked;
@@ -50,7 +50,7 @@ public class SalaryCalculations {
   
    //Method to calculate gross pay
    public double calculateGrossPay() {
-       return ;
+       return;
    }
 
    //Method to calculate total deductions
