@@ -20,7 +20,6 @@ public class Payroll {
     private double netPay;
 
 
-
     //default constructor
     // Initializes all fields to default values
     public Payroll() {
@@ -40,7 +39,6 @@ public class Payroll {
         this.totalDeductions = 0.0;
         this.netPay = 0.0;
     }
-
 
 
     //setters and getters
@@ -169,8 +167,7 @@ public class Payroll {
     }
 
 
-
-    public void  InputEmployeeDetails() {
+    public void InputEmployeeDetails() {
         Scanner scanner = new Scanner(System.in);
 
         try {
@@ -191,23 +188,38 @@ public class Payroll {
             System.out.print("Enter Overtime Hours Worked: ");
             this.setOvertimeHours(Double.parseDouble(scanner.nextLine()));
 
+
         } catch (Exception e) {
             System.out.println("An error occurred: Invalid input.");
         }
     }
 
-    public void printPayslip() {
-        System.out.println("\nABC Solutions - Employee Payslip (2025)");
-        System.out.println("=================================");
-        System.out.println("Employee ID: " + this.getEmployeeId());
-        System.out.println("Name: " + this.getEmployeeName());
-        System.out.println("Department: " + this.getDepartment());
-        System.out.println("\nEARNINGS");
-        System.out.printf("Basic Salary: PHP %.2f\n", this.getBasicSalary());
-        System.out.println("Overtime Pay: (calculation not yet implemented)");
-        System.out.println("=================================");
+
+
+        public void printPayslip() {
+            System.out.println("\nABC Solutions - Employee Payslip (2025)");
+            System.out.println("=================================");
+            System.out.println("Employee ID: " + this.getEmployeeId());
+            System.out.println("Name: " + this.getEmployeeName());
+            System.out.println("Department: " + this.getDepartment());
+
+            System.out.println("\nEARNINGS");
+            System.out.printf("Basic Salary: PHP %.2f\n", this.getBasicSalary());
+            System.out.printf("Hourly Rate: PHP %.2f\n", this.getHourlyRate());
+            System.out.printf("Overtime Rate: PHP %.2f\n", this.getOvertimeRate());
+            System.out.printf("Overtime Pay: PHP %.2f\n", this.getOvertimePay());
+            System.out.printf("Gross Pay: PHP %.2f\n", this.getGrossPay());
+
+            System.out.println("\nDEDUCTIONS");
+            System.out.printf("SSS Contribution: PHP %.2f\n", this.getSssContribution());
+            System.out.printf("PhilHealth Contribution: PHP %.2f\n", this.getPhilHealthContribution());
+            System.out.printf("Pag-IBIG Contribution: PHP %.2f\n", this.getPagIbigContribution());
+            System.out.printf("Income Tax: PHP %.2f\n", this.getIncomeTax());
+            System.out.printf("Total Deductions: PHP %.2f\n", this.getTotalDeductions());
+
+            System.out.println("=================================");
+            System.out.printf("NET PAY: PHP %.2f\n", this.getNetPay());
+            System.out.println("=================================");
+        }
     }
-
-
-}
 
