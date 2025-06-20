@@ -47,20 +47,12 @@ public class SalaryCalculations {
         System.out.println("Monthly Salary: " + getSalary());
         System.out.println("Overtime Hours Worked: " + getOtHours());
         System.out.println("Overtime Pay: " + calculateOvertimePay());
+        System.out.println("Gross Pay: " + calculateGrossPay());
     }
 
    //Method to calculate gross pay
    public double calculateGrossPay() {
-       return ;
-   }
-
-   //Method to calculate total deductions
-   public double totalDeductions() {
-       return ;
-   }
-
-   //Method to calculate total net pay
-   public double calculateNetPay() {
-       return ;
-   }
+        double grossPay = salary + calculateOvertimePay();
+        return grossPay;
+    }
 }
