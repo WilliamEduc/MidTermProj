@@ -114,7 +114,7 @@ public class StatutoryDeductions {
             }
         }
 
-    }
+    
 
     public double calculatePhilHealthContribution(double basicSalary) {
         if (basicSalary <= 10000) {
@@ -155,5 +155,6 @@ public class StatutoryDeductions {
         double yearlyIncome = monthlySalary * 12;
         return calculateYearlyIncomeTax(yearlyIncome) / 12;
     }
+}
 
 
