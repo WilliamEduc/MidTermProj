@@ -1,7 +1,7 @@
 package CodeBase;
 
 public class SalaryCalculations {
-        private String name;
+    private String name;
     private double salary;
     private double otHours;
 
