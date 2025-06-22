@@ -1,4 +1,4 @@
-package CodeBase;
+package CodeBase.CodeBase;
 
 import java.util.Scanner;
 
@@ -174,41 +174,59 @@ public class Payroll {
             System.out.println("Welcome to ABC Payroll System");
 
             System.out.print("Enter Employee ID (Format: EMP-XXXX): ");
-            this.setEmployeeId(scanner.nextLine());
+            String employeeId = scanner.nextLine();
 
             System.out.print("Enter Full Name: ");
-            this.setEmployeeName(scanner.nextLine());
+            String employeeName = scanner.nextLine();
 
             System.out.print("Enter Department: ");
-            this.setDepartment(scanner.nextLine());
+            String department = scanner.nextLine();
 
             System.out.print("Enter Basic Monthly Salary PHPsymbol: ");
-            this.setBasicSalary(Double.parseDouble(scanner.nextLine()));
+            double basicSalary = scanner.nextDouble();
 
             System.out.print("Enter Overtime Hours Worked: ");
-            this.setOvertimeHours(Double.parseDouble(scanner.nextLine()));
+            int overtimeHours = scanner.nextInt();
 
+            this.setEmployeeId(employeeId);
+            this.setEmployeeName(employeeName);
+            this.setDepartment(department);
+            this.setBasicSalary(basicSalary);
+            this.setOvertimeHours(overtimeHours);
+
+            calculatePayrollValues(basicSalary, overtimeHours);
+
+            printPayslip();
 
         } catch (Exception e) {
             System.out.println("An error occurred: Invalid input.");
         }
     }
 
+    private void calculatePayrollValues(double basicSalary, double overtimeHours) {
+        SalaryCalculations salaryCalc = new SalaryCalculations();
+        salaryCalc.setSalary(basicSalary);
+        salaryCalc.setOtHours(overtimeHours);
 
+        // Calculate earnings
+        this.setHourlyRate(salaryCalc.getHourlyRate());
+        this.setOvertimeRate(this.getHourlyRate() * 1.25);
+        this.setOvertimePay(salaryCalc.calculateOvertimePay());
+        this.setGrossPay(salaryCalc.calculateGrossPay());
 
-        public void printPayslip() {
-            System.out.println("\nABC Solutions - Employee Payslip (2025)");
-            System.out.println("=================================");
-            System.out.println("Employee ID: " + this.getEmployeeId());
-            System.out.println("Name: " + this.getEmployeeName());
-            System.out.println("Department: " + this.getDepartment());
+    }
 
-            System.out.println("\nEARNINGS");
-            System.out.printf("Basic Salary: PHP %.2f\n", this.getBasicSalary());
-            System.out.printf("Hourly Rate: PHP %.2f\n", this.getHourlyRate());
-            System.out.printf("Overtime Rate: PHP %.2f\n", this.getOvertimeRate());
-            System.out.printf("Overtime Pay: PHP %.2f\n", this.getOvertimePay());
-            System.out.printf("Gross Pay: PHP %.2f\n", this.getGrossPay());
+    public void printPayslip() {
+        System.out.println("\nABC Solutions - Employee Payslip (2025)");
+        System.out.println("=================================");
+        System.out.println("Employee ID: " + this.getEmployeeId());
+        System.out.println("Name: " + this.getEmployeeName());
+        System.out.println("Department: " + this.getDepartment());
+
+        System.out.println("\nEARNINGS");
+        System.out.printf("Basic Salary: PHP %.2f\n", this.getBasicSalary());
+        System.out.printf("Overtime Pay: PHP %.2f\n", this.getOvertimePay());
+        System.out.printf("Gross Pay: PHP %.2f\n", this.getGrossPay());
 
             System.out.println("\nDEDUCTIONS");
             System.out.printf("SSS Contribution: PHP %.2f\n", this.getSssContribution());
