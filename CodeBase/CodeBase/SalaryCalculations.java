@@ -1,15 +1,15 @@
-package CodeBase;
+package Project.CodeBase.CodeBase;
 
 public class SalaryCalculations {
     private String name;
     private double salary;
     private double otHours;
 
-    public Overtime(){
-        name = " ";
-        salary = 0.00;
-        otHours = 0.00;
-    }
+//    public Overtime(){
+//        name = " ";
+//        salary = 0.00;
+//        otHours = 0.00;
+//    }
     public String getName(){
         return name;
     }
