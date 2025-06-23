@@ -1,8 +1,10 @@
-package CodeBase.CodeBase;
+package Project.CodeBase.CodeBase;
+
 
 import java.util.Scanner;
 
 public class Payroll {
+    //decralation of viarables
     private String employeeId;
     private String employeeName;
     private String department;
@@ -214,7 +216,25 @@ public class Payroll {
         this.setOvertimePay(salaryCalc.calculateOvertimePay());
         this.setGrossPay(salaryCalc.calculateGrossPay());
 
+        // Create StatutoryDeductions object
+        StatutoryDeductions deductions = new StatutoryDeductions();
+
+        // Calculate and set deductions
+        this.setSssContribution(deductions.calculateSSSContribution(basicSalary));
+        this.setPhilHealthContribution(deductions.calculatePhilHealthContribution(basicSalary));
+        this.setPagIbigContribution(deductions.calculatePagIbigContribution());
+        this.setIncomeTax(deductions.calculateMonthlyTaxFromYearly(basicSalary));
+
+        // Calculate total deductions and net pay
+        double totalDeductions = this.getSssContribution() +
+                this.getPhilHealthContribution() +
+                this.getPagIbigContribution() +
+                this.getIncomeTax();
+
+        this.setTotalDeductions(totalDeductions);
+        this.setNetPay(this.getGrossPay() - totalDeductions);
     }
+
 
     public void printPayslip() {
         System.out.println("\nABC Solutions - Employee Payslip (2025)");
