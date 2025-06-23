@@ -15,44 +15,44 @@ public class SalaryCalculations {
     // Overtime hours worked
     private double otHours;
 
-    /**
-     * Retrieves the employee's full name.
-     */
+    
+     // Retrieves the employee's full name.
+    
     public String getName() {
         return name;
     }
 
-    /**
-     * Gets the employee's base monthly salary.
-     */
+    
+     // Gets the employee's base monthly salary.
+     
     public double getSalary() {
         return salary;
     }
 
-    /**
-     * Returns the number of overtime hours the employee has worked.
-     */
+    
+     // Returns the number of overtime hours the employee has worked.
+     
     public double getOtHours() {
         return otHours;
     }
 
-    /**
-     * Sets the employee's name.
-     */
+    
+      //Sets the employee's name.
+     
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * Sets the employee's monthly salary amount.
-     */
+    
+     // Sets the employee's monthly salary amount.
+     
     public void setSalary(double salary) {
         this.salary = salary;
     }
 
-    /**
-     * Records the number of overtime hours worked.
-     */
+    
+     // Records the number of overtime hours worked.
+     
     public void setOtHours(double otHours) {
         this.otHours = otHours;
     }
