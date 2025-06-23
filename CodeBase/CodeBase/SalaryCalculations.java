@@ -70,7 +70,7 @@ public class SalaryCalculations {
     /**
      * Calculates overtime pay at premium rate (25% more than normal hourly rate).
      *
-     * The calculation follows two steps:
+     * The calculation follows in this steps:
      * 1. First gets the standard hourly rate by dividing monthly salary by 160
      * 2. Then applies 1.25 multiplier for overtime premium pay
      *
@@ -113,3 +113,4 @@ public class SalaryCalculations {
         return grossPay;
     }
 }
+// pa tell nalang mga pards if may ano na ewan pa 
