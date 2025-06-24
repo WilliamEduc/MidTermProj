@@ -117,7 +117,10 @@ public class StatutoryDeductions {
    }
 
 
-//The calculatePhilHealthContribution method calculates the payment for health insurance (PhilHealth) based on salary. For example, it charges 250 pesos for salaries of 10,000 pesos or less, 1,250 pesos for salaries of 50,000 pesos or more, and 2,500 pesos for salaries of 100,000 pesos or more. It also calculates a different amount for salaries between 10,000 and 50,000 pesos. 
+/*The calculatePhilHealthContribution method calculates the payment for health insurance (PhilHealth) based on salary. 
+    For example, it charges 250 pesos for salaries of 10,000 pesos or less, 1,250 pesos for salaries of 50,000 pesos or more, and 2,500 pesos for salaries of 100,000 pesos or more. 
+    It also calculates a different amount for salaries between 10,000 and 50,000 pesos. 
+*/
 
    public double calculatePhilHealthContribution(double basicSalary) {
        if (basicSalary <= 10000) {
@@ -135,8 +138,9 @@ public class StatutoryDeductions {
        return PAG_IBIG_RATE;
    }
 
-//The calculateIncomeTax method calculates the tax owed based on monthly salary. No tax is due for salaries of 20,833 pesos or less. For higher salaries, it charges 15% on the amount over 20,833 pesos for incomes up to 33,333 pesos, and higher rates for larger incomes 
-
+/*  The calculateIncomeTax method calculates the tax owed based on monthly salary. 
+    No tax is due for salaries of 20,833 pesos or less. For higher salaries, it charges 15% on the amount over 20,833 pesos for incomes up to 33,333 pesos, and higher rates for larger incomes 
+*/
    public double calculateIncomeTax(double monthlySalary) {
        if (monthlySalary <= 20833) {
            return 0;
@@ -148,7 +152,10 @@ public class StatutoryDeductions {
            return 8542 + (monthlySalary - 66666) * 0.25;
        }
    }
-//The calculateYearlyIncomeTax method calculates annual tax based on total yearly income. It charges no tax for incomes of 250,000 pesos or less, 15% on the amount over 250,000 pesos for incomes up to 400,000 pesos, and higher rates for larger incomes, with the highest rate of 30% for incomes over 2,000,000 pesos. 
+    
+/*  The calculateYearlyIncomeTax method calculates annual tax based on total yearly income. It charges no tax for incomes of 250,000 pesos or less,
+    15% on the amount over 250,000 pesos for incomes up to 400,000 pesos, and higher rates for larger incomes, with the highest rate of 30% for incomes over 2,000,000 pesos. 
+*/
    public double calculateYearlyIncomeTax(double yearlyIncome) {
        if (yearlyIncome <= 250000) return 0;
        if (yearlyIncome <= 400000) return (yearlyIncome - 250000) * 0.15;
@@ -156,7 +163,10 @@ public class StatutoryDeductions {
        if (yearlyIncome <= 2000000) return 102500 + (yearlyIncome - 800000) * 0.25;
        return 402500 + (yearlyIncome - 2000000) * 0.30;
    }
-//The calculateMonthlyTaxFromYearly method calculates the monthly tax by first determining the yearly income from the provided monthly salary and then computing the yearly tax using another method. It returns the monthly tax by dividing the yearly tax by 12.
+    
+/*  The calculateMonthlyTaxFromYearly method calculates the monthly tax by first determining the yearly income from the provided monthly salary and then computing the yearly tax using another method.
+    It returns the monthly tax by dividing the yearly tax by 12.
+ */
    public double calculateMonthlyTaxFromYearly(double monthlySalary) {
        double yearlyIncome = monthlySalary * 12;
        return calculateYearlyIncomeTax(yearlyIncome) / 12;
