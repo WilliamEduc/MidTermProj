@@ -1,6 +1,6 @@
 package Project.CodeBase;
 
-/**
+/*
  * in this class, it handles all salary-related computations
  * for employees, including regular pay, overtime calculations,
  * and total gross pay computations.
@@ -21,16 +21,13 @@ public class SalaryCalculations {
     public String getName() {
         return name;
     }
-
     
      // Gets the employee's base monthly salary.
-     
     public double getSalary() {
         return salary;
     }
 
      // Returns the number of overtime hours the employee has worked.
-     
     public double getOtHours() {
         return otHours;
     }
