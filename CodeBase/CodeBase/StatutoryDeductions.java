@@ -1,10 +1,13 @@
     package Project.CodeBase.CodeBase;
 
-   /*
-The calculateSSSContribution method determines how much a person must pay to the Social Security System (SSS) based on their income. It assigns specific amounts depending on income ranges, such as 500 pesos for incomes between 0 and 5,250 pesos and 550 pesos for incomes between 5,250 and 5,750 pesos. If the income is less than 0, it indicates an invalid input. 
-*/
+   
 public class StatutoryDeductions {
+    //
    private static final double PAG_IBIG_RATE = 200;
+
+//The calculateSSSContribution method determines how much a person must pay to the Social Security System (SSS) based on their income.
+It assigns specific amounts depending on income ranges, such as 500 pesos for incomes between 0 and 5,250 pesos and 550 pesos for incomes between 5,250 and 5,750 pesos. 
+If the income is less than 0, it indicates an invalid input. 
 
    public double calculateSSSContribution(double income) {
 
