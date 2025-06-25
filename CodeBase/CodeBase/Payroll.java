@@ -186,9 +186,19 @@ public class Payroll {
 
             System.out.print("Enter Basic Monthly Salary PHPsymbol: ");
             double basicSalary = scanner.nextDouble();
+            
+            while (basicSalary < 0){
+                System.out.print("Negative values, enter again. Enter Basic Monthly Salary PHPsymbol: ");
+                basicSalary = scanner.nextDouble();
+            }
 
             System.out.print("Enter Overtime Hours Worked: ");
             int overtimeHours = scanner.nextInt();
+
+            while(overtimeHours < 0){
+                System.out.print("Negative values, enter again. Enter Overtime Hours Worked");
+                overtimeHours = scanner.nextInt();
+            }
 
             this.setEmployeeId(employeeId);
             this.setEmployeeName(employeeName);
