@@ -450,7 +450,7 @@ public class Payroll {
         try {
             System.out.println("Welcome to ABC Payroll System");
 
-            String regex = "^EMP-\\d{4}$";
+            String regex = "^EMP-\\d{4}$"; //regex = regular expression
             String employeeId;
             while (true) {
                 System.out.print("Enter Employee ID (Format: EMP-XXXX): ");
