@@ -45,8 +45,11 @@ public class SalaryCalculations {
         StatutoryDeductions deductions = new StatutoryDeductions();
 
         payroll.setSssContribution(deductions.calculateSSSContribution(payroll.getBasicSalary()));
+
         payroll.setPhilHealthContribution(deductions.calculatePhilHealthContribution(payroll.getBasicSalary()));
+
         payroll.setPagIbigContribution(deductions.calculatePagIbigContribution());
+
         payroll.setIncomeTax(deductions.calculateMonthlyTaxFromYearly(payroll.getBasicSalary()));
 
         // Calculate total deductions
