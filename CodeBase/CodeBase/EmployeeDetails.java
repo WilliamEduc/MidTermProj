@@ -13,26 +13,44 @@ public class EmployeeDetails {
 
     public void inputEmployeeDetails() {
         Scanner scanner = new Scanner(System.in);
+        Checker check = new Checker();
 
         System.out.print("Enter Employee ID: ");
         String id = scanner.nextLine();
-        payroll.setEmployeeId(id);
+        if (check.isValidEmployeeId(id)) {
+            payroll.setEmployeeId(id);
+        } else {
+            System.out.println(check.getEmployeeIdErrorMessage(id));
+        }
 
         System.out.print("Enter Employee Name: ");
         String name = scanner.nextLine();
-        payroll.setEmployeeName(name);
+        if (check.isValidEmployeeName(name)) {
+            payroll.setEmployeeName(name);
+        } else {
+            System.out.println(check.getEmployeeNameErrorMessage(name));
+        }
 
         System.out.print("Enter Department: ");
         String dept = scanner.nextLine();
-        payroll.setDepartment(dept);
+            payroll.setDepartment(dept);
+
 
         System.out.print("Enter Basic Salary: ");
         double salary = scanner.nextDouble();
-        payroll.setBasicSalary(salary);
+        if (check.isValidBasicSalary(salary)) {
+            payroll.setBasicSalary(salary);
+        } else {
+            System.out.println(check.getBasicSalaryErrorMessage(salary));
+        }
 
         System.out.print("Enter Overtime Hours: ");
         int hours = scanner.nextInt();
-        payroll.setOvertimeHours(hours);
+        if (check.isValidOvertimeHours(hours)) {
+            payroll.setOvertimeHours(hours);
+        } else {
+            System.out.println(check.getOvertimeHoursErrorMessage(hours));
+        }
     }
 
     //allows other classes to access the payroll object that’s
@@ -41,3 +59,4 @@ public class EmployeeDetails {
         return payroll;
     }
 }
+
