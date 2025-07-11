@@ -1,5 +1,4 @@
 package CodeBase;
-
 import java.util.Scanner;
 
 //this class is for getting the employee details only
@@ -15,41 +14,75 @@ public class EmployeeDetails {
         Scanner scanner = new Scanner(System.in);
         Checker check = new Checker();
 
-        System.out.print("Enter Employee ID: ");
-        String id = scanner.nextLine();
-        if (check.isValidEmployeeId(id)) {
-            payroll.setEmployeeId(id);
-        } else {
-            System.out.println(check.getEmployeeIdErrorMessage(id));
+        String id;
+        while (true) {
+            System.out.print("Enter Employee ID: ");
+            id = scanner.nextLine();
+            if (check.isValidEmployeeId(id)) {
+                payroll.setEmployeeId(id);
+                break;
+            } else {
+                System.out.println(check.getEmployeeIdErrorMessage(id));
+            }
         }
 
-        System.out.print("Enter Employee Name: ");
-        String name = scanner.nextLine();
-        if (check.isValidEmployeeName(name)) {
-            payroll.setEmployeeName(name);
-        } else {
-            System.out.println(check.getEmployeeNameErrorMessage(name));
+        String name;
+        while (true) {
+            System.out.print("Enter Employee Name: ");
+            name = scanner.nextLine();
+            if (check.isValidEmployeeName(name)) {
+                payroll.setEmployeeName(name);
+                break;
+            } else {
+                System.out.println(check.getEmployeeNameErrorMessage(name));
+            }
         }
 
-        System.out.print("Enter Department: ");
-        String dept = scanner.nextLine();
-            payroll.setDepartment(dept);
-
-
-        System.out.print("Enter Basic Salary: ");
-        double salary = scanner.nextDouble();
-        if (check.isValidBasicSalary(salary)) {
-            payroll.setBasicSalary(salary);
-        } else {
-            System.out.println(check.getBasicSalaryErrorMessage(salary));
+                String dept;
+        while (true) {
+            System.out.print("Enter Department: ");
+            dept = scanner.nextLine();
+            if (!dept.trim().isEmpty()) {
+                payroll.setDepartment(dept);
+                break;
+            } else {
+                System.out.println("Department cannot be empty. Please try again!");
+            }
         }
 
-        System.out.print("Enter Overtime Hours: ");
-        int hours = scanner.nextInt();
-        if (check.isValidOvertimeHours(hours)) {
-            payroll.setOvertimeHours(hours);
-        } else {
-            System.out.println(check.getOvertimeHoursErrorMessage(hours));
+
+        double salary;
+        while (true) {
+            System.out.print("Enter Basic Salary: ");
+            try {
+                salary = scanner.nextDouble();
+                if (check.isValidBasicSalary(salary)) {
+                    payroll.setBasicSalary(salary);
+                    break;
+                } else {
+                    System.out.println(check.getBasicSalaryErrorMessage(salary));
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+                scanner.nextLine(); // clear the invalid input
+            }
+        }
+
+        int hours;
+        while (true) {
+            System.out.print("Enter Overtime Hours: ");
+            try {
+                hours = scanner.nextInt();
+                if (check.isValidOvertimeHours(hours)) {
+                    payroll.setOvertimeHours(hours);
+                    break;
+                } else {
+                    System.out.println(check.getOvertimeHoursErrorMessage(hours));
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+                scanner.nextLine(); // clear the invalid input
+            }
         }
     }
 
@@ -59,4 +92,3 @@ public class EmployeeDetails {
         return payroll;
     }
 }
-
