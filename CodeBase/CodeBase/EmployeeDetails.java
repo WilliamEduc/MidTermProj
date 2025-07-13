@@ -1,4 +1,5 @@
 package CodeBase;
+
 import java.util.Scanner;
 
 //this class is for getting the employee details only
