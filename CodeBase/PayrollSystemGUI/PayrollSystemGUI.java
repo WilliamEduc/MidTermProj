@@ -1,6 +1,6 @@
 package PayrollSystemGUI;
 
-import PayrollSystem.*;
+import CodeBase.*;
 import javax.swing.*;
 import java.awt.*;
 import java.io.FileWriter;
