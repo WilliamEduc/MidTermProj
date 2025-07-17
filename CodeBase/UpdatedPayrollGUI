@@ -1,5 +1,8 @@
-package CodeBased;
+package PayrollSystem;
 
+import CodeBase.Checker;
+import CodeBase.Payroll;
+import CodeBase.SalaryCalculations;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +11,7 @@ import java.util.Optional;
 
 
 public class PayrollSystemGUI {
-    private EmployeeDatabased db = new EmployeeDatabased();
+    private EmployeeDatabase db = new EmployeeDatabase();
     private Checker checker = new Checker();
 
 
@@ -32,7 +35,7 @@ public class PayrollSystemGUI {
     private void initializeGUI() {
         mainFrame = new JFrame("ABC Payroll System");
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainFrame.setSize(500, 450);
+        mainFrame.setSize(500, 350);
         mainFrame.setLocationRelativeTo(null);
 
 
@@ -65,10 +68,30 @@ public class PayrollSystemGUI {
 
 
         JButton addEmployeeBtn = new JButton("Add Employee");
+        addEmployeeBtn.setBackground(new Color(33, 150, 243));
+        addEmployeeBtn.setForeground(Color.WHITE);
+        addEmployeeBtn.setOpaque(true);
+        addEmployeeBtn.setBorderPainted(false);
         JButton removeEmployeeBtn = new JButton("Remove Employee");
+        removeEmployeeBtn.setBackground(new Color(33, 150, 243));
+        removeEmployeeBtn.setForeground(Color.WHITE);
+        removeEmployeeBtn.setOpaque(true);
+        removeEmployeeBtn.setBorderPainted(false);
         JButton listEmployeesBtn = new JButton("List Employees");
+        listEmployeesBtn.setBackground(new Color(33, 150, 243));
+        listEmployeesBtn.setForeground(Color.WHITE);
+        listEmployeesBtn.setOpaque(true);
+        listEmployeesBtn.setBorderPainted(false);
         JButton generatePayrollBtn = new JButton("Generate Payroll");
+        generatePayrollBtn.setBackground(new Color(33, 150, 243));
+        generatePayrollBtn.setForeground(Color.WHITE);
+        generatePayrollBtn.setOpaque(true);
+        generatePayrollBtn.setBorderPainted(false);
         JButton exitBtn = new JButton("Exit");
+        exitBtn.setBackground(new Color(33, 150, 243));
+        exitBtn.setForeground(Color.WHITE);
+        exitBtn.setOpaque(true);
+        exitBtn.setBorderPainted(false);
 
 
         addEmployeeBtn.addActionListener(e -> cardLayout.show(mainPanel, "AddEmployee"));
@@ -122,7 +145,15 @@ public class PayrollSystemGUI {
 
         JPanel buttonPanel = new JPanel(new FlowLayout());
         JButton submitBtn = new JButton("Submit");
+        submitBtn.setBackground(new Color(33, 150, 243));
+        submitBtn.setForeground(Color.WHITE);
+        submitBtn.setOpaque(true);
+        submitBtn.setBorderPainted(false);
         JButton backBtn = new JButton("Back to Menu");
+        backBtn.setBackground(new Color(33, 150, 243));
+        backBtn.setForeground(Color.WHITE);
+        backBtn.setOpaque(true);
+        backBtn.setBorderPainted(false);
 
 
         submitBtn.addActionListener(e -> {
@@ -201,7 +232,15 @@ public class PayrollSystemGUI {
 
         JPanel buttonPanel = new JPanel();
         JButton removeBtn = new JButton("Remove");
+        removeBtn.setBackground(new Color(33, 150, 243));
+        removeBtn.setForeground(Color.WHITE);
+        removeBtn.setOpaque(true);
+        removeBtn.setBorderPainted(false);
         JButton backBtn = new JButton("Back to Menu");
+        backBtn.setBackground(new Color(33, 150, 243));
+        backBtn.setForeground(Color.WHITE);
+        backBtn.setOpaque(true);
+        backBtn.setBorderPainted(false);
 
 
         removeBtn.addActionListener(e -> {
@@ -228,6 +267,10 @@ public class PayrollSystemGUI {
         employeeListArea.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(employeeListArea);
         JButton backBtn = new JButton("Back to Menu");
+        backBtn.setBackground(new Color(33, 150, 243));
+        backBtn.setForeground(Color.WHITE);
+        backBtn.setOpaque(true);
+        backBtn.setBorderPainted(false);
 
 
         backBtn.addActionListener(e -> cardLayout.show(mainPanel, "Menu"));
@@ -250,7 +293,15 @@ public class PayrollSystemGUI {
 
 
         JButton generateBtn = new JButton("Generate Payslip");
+        generateBtn.setBackground(new Color(33, 150, 243));
+        generateBtn.setForeground(Color.WHITE);
+        generateBtn.setOpaque(true);
+        generateBtn.setBorderPainted(false);
         JButton backBtn = new JButton("Back to Menu");
+        backBtn.setBackground(new Color(33, 150, 243));
+        backBtn.setForeground(Color.WHITE);
+        backBtn.setOpaque(true);
+        backBtn.setBorderPainted(false);
 
 
         generateBtn.addActionListener(e -> {
@@ -261,7 +312,7 @@ public class PayrollSystemGUI {
 
             if (opt.isPresent()) {
                 Payroll emp = opt.get();
-                new SalaryCalculation(emp).calculateAndStorePayroll();
+                new SalaryCalculations(emp).calculateAndStorePayroll();
                 String payslip = generatePayslipText(emp);
                 payslipArea.setText(payslip);
                 payslipArea.setCaretPosition(0);
@@ -363,4 +414,3 @@ public class PayrollSystemGUI {
         SwingUtilities.invokeLater(PayrollSystemGUI::new);
     }
 }
-
