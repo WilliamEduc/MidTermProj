@@ -4,10 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.FileWriter;
 import java.util.Optional;
-
+import CodeBase.*;
 
 public class PayrollSystemGUI {
-    private EmployeeDatabased db = new EmployeeDatabased();
+    private EmployeeDatabase db = new EmployeeDatabase();
     private Checker checker = new Checker();
 
 
@@ -260,7 +260,7 @@ public class PayrollSystemGUI {
 
             if (opt.isPresent()) {
                 Payroll emp = opt.get();
-                new SalaryCalculation(emp).calculateAndStorePayroll();
+                new SalaryCalculations(emp).calculateAndStorePayroll();
                 String payslip = generatePayslipText(emp);
                 payslipArea.setText(payslip);
                 payslipArea.setCaretPosition(0);
