@@ -11,7 +11,7 @@ public class Print {
 
     public void printPayslip() {
         System.out.println("\nABC Solutions - Employee Payslip (2025)");
-        System.out.println("=================================");
+        System.out.println("=========================================");
         System.out.println("Employee ID: " + payroll.getEmployeeId());
         System.out.println("Name: " + payroll.getEmployeeName());
         System.out.println("Department: " + payroll.getDepartment());
@@ -28,8 +28,8 @@ public class Print {
         System.out.printf("Income Tax: ₱ %.2f\n", payroll.getIncomeTax());
         System.out.printf("Total Deductions: ₱ %.2f\n", payroll.getTotalDeductions());
 
-        System.out.println("=================================");
+        System.out.println("=========================================");
         System.out.printf("NET PAY: ₱ %.2f\n", payroll.getNetPay());
-        System.out.println("=================================");
+        System.out.println("=========================================");
     }
 }
