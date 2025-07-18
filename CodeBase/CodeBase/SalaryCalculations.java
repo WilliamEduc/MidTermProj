@@ -50,7 +50,8 @@ public class SalaryCalculations {
 
         payroll.setPagIbigContribution(deductions.calculatePagIbigContribution());
 
-        payroll.setIncomeTax(deductions.calculateMonthlyTaxFromYearly(payroll.getBasicSalary()));
+        // fixed
+        payroll.setIncomeTax(deductions.calculateMonthlyTaxFromYearly(grossPay));
 
         // Calculate total deductions
         double totalDeductions = payroll.getSssContribution() +
